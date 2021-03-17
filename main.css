@@ -1,0 +1,22 @@
+body{
+    background: #141E30;   
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  
+    background: linear-gradient(to right, #243B55, #141E30);  
+    
+} 
+h1,h2,h3,h4,h5,p{
+    font-family: 'Josefin Sans', sans-serif;
+}
+h1{color: #adc7cc;
+    
+}
+h2{
+    color: rgb(224, 224, 207);
+}
+p{
+    color: #b3b3b3;
+}
+#apod_img{
+    border-radius: 1rem;
+}
+#mapid { height: 480px; }
