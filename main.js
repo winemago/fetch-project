@@ -4,7 +4,7 @@ function getBlob(){    //using .then
     .then(response =>{                                   
         return response.blob();
     }).then(image =>{
-        document.getElementById('img').src=URL.createObjectURL(image);
+        document.getElementById('img_header').src=URL.createObjectURL(image);
     });
 }
 
@@ -73,6 +73,7 @@ async function chartIT(){
         },
         options: {
             responsive: true,
+            
             legend: {
                 labels: {
                     fontColor: "beige",
@@ -97,6 +98,7 @@ async function chartIT(){
                 }]
             }
         }
+    
     });
 }
 
@@ -113,7 +115,7 @@ async function getSAT(){
     // Making a marker with a custom icon
     const issIcon = L.icon({
       iconUrl: 'iss.png',
-      iconSize: [50, 32],
+      iconSize: [60, 42],
       iconAnchor: [25, 16]
     });
     const marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);

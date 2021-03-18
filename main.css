@@ -3,7 +3,7 @@ body{
     background: -webkit-linear-gradient(to right, #243B55, #141E30);  
     background: linear-gradient(to right, #243B55, #141E30);  
 } 
-h1,h2,h3,h4,h5,p{
+h1,h2,h3,h4,h5,p,a{
     font-family: 'Josefin Sans', sans-serif;
 }
 h1{
@@ -16,16 +16,26 @@ h2{
 p{
     color: #b3b3b3;
 }
-
 .titles{
     width: 100%;
     height: 12%;
 }
 
-#img{
+
+
+#fp-nav ul li a span{
+    background-color: #4E9CAF;
+}
+
+/*--------------HOME-----------------------*/
+
+#img_header{
     position: absolute;
     width: 100%;
     top: 0%;
+}
+.home_title{
+    font-size: 35px;    
 }
 .chev_down{
     position: absolute;
@@ -40,11 +50,19 @@ p{
 }
 
 
-#chart{
+/*--------------GAT-----------------------*/
+.graph{
+    position:relative;
+    left: 50%;
+    transform: translateX(-50%);       /*center item with relative positioning*/
+    width: 70%;
+}
+.info_GAT{
+    width: 70%;
     position: relative;
-    margin: auto;
-    height: 80vh;
-    width: 8vw;
+    left: 50%;
+    transform: translateX(-50%);      
+    
 }
 .hyper{
     text-decoration: none;
@@ -53,6 +71,7 @@ p{
     height: 20px;
     background: #4E9CAF;
     padding: 10px;
+    margin:10px;
     text-align: center;
     border-radius: 5px;
     color: rgb(224, 224, 207);
@@ -61,11 +80,18 @@ p{
 }
 
 
+
+
+/*--------------ISS-----------------------*/
 #mapid {
      height: 480px; 
      border-radius: 10px;
 }
 
+
+
+
+/*--------------APOD-----------------------*/
 
 .Apod{
     display: flex;
@@ -96,10 +122,16 @@ p{
 }
 
 
+
+/*--------------MEDIA QUERIES-----------------------*/
+
 @media only screen and (max-width: 1440px){
     #apod_img{
         width: 600px;
         height: 600px;
+    }
+    .graph{
+        width: 95%;
     }
 }
 @media only screen and (max-width: 1024px){
@@ -107,19 +139,23 @@ p{
         width: 500px;
         height: 500px;
     }
+    .graph{
+        width: 100%;
+    }
 }
 @media only screen and (max-width: 768px){
     #apod_img{
         width: 400px;
         height: 400px;
     }
+    .graph{
+        width: 100%;
+    }
 }
 @media only screen and (max-width: 425px){
     .titles{
-  
         height: 7%;
     }
-
     #apod_img{
         width: 300px;
         height: 300px;
@@ -140,5 +176,6 @@ p{
         margin-left: auto;
         margin-right: auto;
     }
+
 }
 
