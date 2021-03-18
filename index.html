@@ -22,9 +22,12 @@
 <body>
     
     <div id="fullpage">
+        <canvas id="canvas"></canvas>
         <div class="section">
+            
             <div class="home">
                 <img id="img_header" src="">
+                
                 <div class="home_title">
                     <h1>NASA API project</h1>
                 </div>
@@ -72,7 +75,8 @@
                 </div> 
             </div>
         </div>  
-    </div>     
+    </div>  
+    <script src="/stars.js"></script>   
     <script>
         getBlob();
         window.addEventListener('load', chartIT);

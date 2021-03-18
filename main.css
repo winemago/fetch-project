@@ -20,7 +20,13 @@ p{
     width: 100%;
     height: 12%;
 }
-
+#canvas{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 80%;
+    bottom: 0%;
+}
 
 
 #fp-nav ul li a span{
