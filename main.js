@@ -1,6 +1,6 @@
 
 function getBlob(){    //using .then
-    fetch('v0oY4ZLt.jpg')
+    fetch('wave.svg')
     .then(response =>{                                   
         return response.blob();
     }).then(image =>{
@@ -38,9 +38,9 @@ async function chartIT(){
     const datatemps = await getCsv();
     console.log(datatemps);
     const myChart = new Chart(ctx, {
-        type: 'line',
+        type: 'line',                   //cake, circle, bar..
         data: {
-            labels: datatemps.year,
+            labels: datatemps.year,     ///x names
             datasets: [
             {
                 label: 'GLOBAL AVERAGE TEMPERATURE',
@@ -81,11 +81,11 @@ async function chartIT(){
             },
             scales: {
                 yAxes: [{
-                    ticks: {
+                    ticks: {                                    //ticks=names
                         ///beginAtZero: true,
                         fontColor: "white",
                         callback: function(value, index, values) {
-                            return value + '°';
+                            return value + '°';                         
                         }
 
                     }
@@ -101,30 +101,44 @@ async function chartIT(){
 }
 
 async function getSAT(){
-    const response = await fetch('https://api.wheretheiss.at/v1/satellites/25544');
-    const data = await response.json();
-    console.log(data);  
-    // initialize the map on the "map" div with a given center and zoom
-    const mymap = L.map('mapid').setView([data.latitude, data.longitude], 3);
+    //init map
+    const mymap = L.map('mapid').setView([0, 0], 1);
+    const attribution =
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
-    const attribution ='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
-    //set the tile or images for the map
     const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     const tiles = L.tileLayer(tileUrl, { attribution });
-    tiles.addTo(mymap); // we added to the map
+    tiles.addTo(mymap);
 
-    const myIcon = L.icon({ //create an icon 
-        iconUrl: 'iss.png',
-        iconSize: [70, 42],
-        iconAnchor: [25, 16],
+    // Making a marker with a custom icon
+    const issIcon = L.icon({
+      iconUrl: 'iss.png',
+      iconSize: [50, 32],
+      iconAnchor: [25, 16]
     });
-    L.marker([data.latitude, data.longitude],{icon: myIcon}).addTo(mymap);//put icon as a marker in a given lat and long
+    const marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);
 
-    document.getElementById('lat').textContent = data.latitude;
-    document.getElementById('lon').textContent = data.longitude;
-    document.getElementById('vel').textContent = data.velocity.toFixed(2);
-    document.getElementById('alt').textContent = data.altitude.toFixed(2);
+    let firstTime = true;
 
+    async function getISS() {
+      const response = await fetch('https://api.wheretheiss.at/v1/satellites/25544');
+      const data = await response.json();
+      const { latitude, longitude } = data;
+
+      marker.setLatLng([latitude, longitude]);
+      if (firstTime) {
+        mymap.setView([latitude, longitude], 2);
+        firstTime = false;
+      }
+      document.getElementById('lat').textContent = latitude.toFixed(2);
+      document.getElementById('lon').textContent = longitude.toFixed(2);
+      document.getElementById('vel').textContent = data.velocity.toFixed(2);
+      document.getElementById('alt').textContent = data.altitude.toFixed(2);
+    }
+
+    getISS();
+
+    setInterval(getISS, 1000);
 }
 
 async function getApod(){

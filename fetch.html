@@ -7,7 +7,6 @@
     <title>fetch()</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
-    <link href="main.css" rel="stylesheet" type="text/css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="main.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -16,40 +15,65 @@
    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.css" integrity="sha512-hGBKkjAVJUXoImyDezOKpzuY4LS1eTvJ4HTC/pbxn47x5zNzGA1vi3vFQhhOehWLTNHdn+2Yqh/IRNPw/8JF/A==" crossorigin="anonymous" />
+   <link href="main.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <img id="img" src="">
-
-    <h1>Surface Temperature Analysis</h1>
-    <canvas id="chart" width="200" height="100"></canvas>
-    <p>According to an ongoing temperature analysis conducted by scientists at NASA’s Goddard Institute for Space Studies (GISS), the average global temperature on Earth has increased by a little more than 1° Celsius (2° Fahrenheit) since 1880. Two-thirds of the warming has occurred since 1975, at a rate of roughly 0.15-0.20°C per decade.</p>
-    <p>The graph above show absolute temperature. They depict how much various regions of the world have warmed or cooled when compared with a base period of 1951-1980. (The global mean surface air temperature for that period was estimated to be 14°C (57°F)</p>
-    <p ><a class="hyper" href="https://data.giss.nasa.gov/gistemp/ "target="_blank" rel="noopener noreferrer">Data from </a></p>
-    <p ><a class="hyper" href="https://earthobservatory.nasa.gov/world-of-change/DecadalTemp"target="_blank" rel="noopener noreferrer">Mean from </a></p>  
-
-    <h1>ISS live</h1>
-    <div id="mapid"></div>
-    <p>latitude: <span id="lat"></span></p>
-    <p>longitude: <span id="lon"></span></p>
-    <p>velocity: <span id="vel"></span> Km/h</p>
-    <p>altitude: <span id="alt"></span> Km</p>
     
-<div class="Apod">
-    <h1>Astronomy Picture of the Day.</h1>
-    <img src="" id="apod_img"alt="apod">
-    <h2 id="title"></h2>
-    <p>By <span id="copyr"></span> - <span id="date"> </span></p>
-    <p id="explanation"></p>
-</div>    
+    <div id="fullpage">
+        <div class="section">
+            <img id="img" src="">
+
+            <div class="chev_down">
+                <img src="/chevron.png" alt="chevron" width="40px">
+            </div>
+        </div>
+        <div class="section">
+            <h1>Surface Temperature Analysis</h1>
+            <canvas id="chart" width="200" height="100"></canvas>
+            <p>According to an ongoing temperature analysis conducted by scientists at NASA’s Goddard Institute for Space Studies (GISS), the average global temperature on Earth has increased by a little more than 1° Celsius (2° Fahrenheit) since 1880. Two-thirds of the warming has occurred since 1975, at a rate of roughly 0.15-0.20°C per decade.</p>
+            <p>The graph above show absolute temperature. They depict how much various regions of the world have warmed or cooled when compared with a base period of 1951-1980. (The global mean surface air temperature for that period was estimated to be 14°C (57°F)</p>
+            <p ><a class="hyper" href="https://data.giss.nasa.gov/gistemp/ "target="_blank" rel="noopener noreferrer">Data from </a></p>
+            <p ><a class="hyper" href="https://earthobservatory.nasa.gov/world-of-change/DecadalTemp"target="_blank" rel="noopener noreferrer">Mean from </a></p>  
+        </div>
+        <div class="section">
+            <h1 class="titles">ISS live</h1>
+            <div id="mapid"></div>
+            <p>latitude: <span id="lat"></span>°</p>
+            <p>longitude: <span id="lon"></span>°</p>
+            <p>velocity: <span id="vel"></span> Km/h</p>
+            <p>altitude: <span id="alt"></span> Km</p>
+        </div>
+        <div class="section">
+            <h1 class="titles">Astronomy Picture of the Day</h1>
+            <div class="Apod">
+                <div class="pic">
+                    <img src="" id="apod_img"alt="apod" width="700"height="700">
+                </div>    
+                <div class="description">  
+                <h2 id="title"></h2>
+                    <p>By <span id="copyr"></span> - <span id="date"> </span></p>
+                    <p id="explanation"></p>
+                </div> 
+                
+            </div>
+        </div>  
+    </div>     
     <script>
-        //getBlob();
+        getBlob();
         window.addEventListener('load', chartIT);
         getCsv();
         getSAT();
         getApod();
+        
     </script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js" integrity="sha512-HqbDsHIJoZ36Csd7NMupWFxC7e7aX2qm213sX+hirN+yEx/eUNlZrTWPs1dUQDEW4fMVkerv1PfMohR1WdFFJQ==" crossorigin="anonymous"></script>
+    <script>var myFullpage = new fullpage('#fullpage',{
+        easing: 'easeInOutCubic',
+        navigation: 'true',
+        
+    }); </script>
 
 </body>
 </html>
