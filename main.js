@@ -148,6 +148,7 @@ async function getApod(){
     const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=0cymwPxbsjzfDJuYPaSucWz3gyY9Ra6Sq9bxITCe');
     const data = await response.json();
     
+    document.getElementById('apod_a').href=data.url;
     document.getElementById('apod_img').src=data.url;
     document.getElementById('title').textContent = data.title;
     document.getElementById('copyr').textContent = data.copyright;
