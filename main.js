@@ -105,7 +105,7 @@ async function getSAT(){
     const data = await response.json();
     console.log(data);  
     // initialize the map on the "map" div with a given center and zoom
-    const mymap = L.map('mapid').setView([data.latitude, data.longitude], 4);
+    const mymap = L.map('mapid').setView([data.latitude, data.longitude], 3);
 
     const attribution ='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
     //set the tile or images for the map
@@ -119,14 +119,12 @@ async function getSAT(){
         iconAnchor: [25, 16],
     });
     L.marker([data.latitude, data.longitude],{icon: myIcon}).addTo(mymap);//put icon as a marker in a given lat and long
-    
 
     document.getElementById('lat').textContent = data.latitude;
     document.getElementById('lon').textContent = data.longitude;
     document.getElementById('vel').textContent = data.velocity.toFixed(2);
     document.getElementById('alt').textContent = data.altitude.toFixed(2);
 
-    
 }
 
 async function getApod(){

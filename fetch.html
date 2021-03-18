@@ -17,18 +17,16 @@
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
 </head>
+
 <body>
-
-
-
     <img id="img" src="">
 
     <h1>Surface Temperature Analysis</h1>
     <canvas id="chart" width="200" height="100"></canvas>
     <p>According to an ongoing temperature analysis conducted by scientists at NASA’s Goddard Institute for Space Studies (GISS), the average global temperature on Earth has increased by a little more than 1° Celsius (2° Fahrenheit) since 1880. Two-thirds of the warming has occurred since 1975, at a rate of roughly 0.15-0.20°C per decade.</p>
     <p>The graph above show absolute temperature. They depict how much various regions of the world have warmed or cooled when compared with a base period of 1951-1980. (The global mean surface air temperature for that period was estimated to be 14°C (57°F)</p>
-    <p><a href="https://data.giss.nasa.gov/gistemp/ "> Data from </a></p>
-    <p><a href="https://earthobservatory.nasa.gov/world-of-change/DecadalTemp">Mean from </a></p>  
+    <p ><a class="hyper" href="https://data.giss.nasa.gov/gistemp/ "target="_blank" rel="noopener noreferrer">Data from </a></p>
+    <p ><a class="hyper" href="https://earthobservatory.nasa.gov/world-of-change/DecadalTemp"target="_blank" rel="noopener noreferrer">Mean from </a></p>  
 
     <h1>ISS live</h1>
     <div id="mapid"></div>
@@ -36,19 +34,19 @@
     <p>longitude: <span id="lon"></span></p>
     <p>velocity: <span id="vel"></span> Km/h</p>
     <p>altitude: <span id="alt"></span> Km</p>
-
+    
+<div class="Apod">
     <h1>Astronomy Picture of the Day.</h1>
     <img src="" id="apod_img"alt="apod">
     <h2 id="title"></h2>
     <p>By <span id="copyr"></span> - <span id="date"> </span></p>
     <p id="explanation"></p>
-    
+</div>    
     <script>
-        getBlob();
+        //getBlob();
         window.addEventListener('load', chartIT);
         getCsv();
         getSAT();
-       
         getApod();
     </script>
     

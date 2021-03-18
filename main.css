@@ -7,8 +7,9 @@ body{
 h1,h2,h3,h4,h5,p{
     font-family: 'Josefin Sans', sans-serif;
 }
-h1{color: #adc7cc;
-    
+h1{
+    color: #adc7cc;
+    text-align: center;
 }
 h2{
     color: rgb(224, 224, 207);
@@ -16,7 +17,48 @@ h2{
 p{
     color: #b3b3b3;
 }
-#apod_img{
-    border-radius: 1rem;
+
+
+#chart{
+    position: relative;
+    margin: auto;
+    height: 80vh;
+    width: 8vw;
 }
-#mapid { height: 480px; }
+.hyper{
+    text-decoration: none;
+    display: block;
+    width: 100px;
+    height: 20px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: rgb(224, 224, 207);
+    font-weight: bold;
+    line-height: 25px;
+}
+
+
+
+#mapid {
+     height: 480px; 
+     border-radius: 10px;
+}
+
+.Apod{
+    text-align: center;
+}
+#apod_img{
+    /*    display: block;
+    margin-left: auto;
+    margin-right: auto;If the CSS width property is set to 100%, the image will be responsive and scale up and down
+      If the max-width property is set to 100%, the image will scale down if it has to, but never scale up to be larger than its original size:*/
+    max-width: 100%;
+    border-radius: 1rem;
+
+}
+#explanation{
+    text-align: left;
+}
+
