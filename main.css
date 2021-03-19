@@ -162,6 +162,12 @@ p{
     .titles{
         height: 7%;
     }
+    #img_header{
+        width: 200%;
+    }
+    #canvas{
+        height: 90%;
+    }
     #apod_img{
         width: 300px;
         height: 300px;
