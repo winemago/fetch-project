@@ -1,11 +1,10 @@
 body{
     background: #141E30;   
     background: -webkit-linear-gradient(to right, #243B55, #141E30);  
-    background: linear-gradient(to right, #243B55, #141E30);  
+    background: linear-gradient(to right, #243B55, #141E30);
+    font-family: 'Josefin Sans', sans-serif;  
 } 
-h1,h2,h3,h4,h5,p,a{
-    font-family: 'Josefin Sans', sans-serif;
-}
+
 h1{
     color: #adc7cc;
     text-align: center;
@@ -89,11 +88,33 @@ p{
 
 
 /*--------------ISS-----------------------*/
+.ISS_title{
+    text-align: center;
+}
+.circle {
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background: rgb(182, 5, 5);
+    animation: live_dot 1s ease infinite;
+}
+.titles > h1 , .titles > span  {
+    display: inline-block;
+
+}
+@keyframes live_dot{
+    0% { opacity: .50;}
+    25% { opacity: .0;}
+    100% { opacity: 1;}
+}
 #mapid {
      height: 480px; 
      border-radius: 10px;
 }
-
+.info_ISS{
+    display: flex;
+    justify-content: space-around;
+}
 
 
 
@@ -165,9 +186,20 @@ p{
     #img_header{
         width: 200%;
     }
+    .home_title{
+        font-size: 30px;
+    }
+
     #canvas{
         height: 90%;
     }
+    .info_ISS{
+        flex-direction: column;
+        position: relative;
+        left: 5%;
+        
+    }
+    
     #apod_img{
         width: 300px;
         height: 300px;
@@ -188,6 +220,8 @@ p{
         margin-left: auto;
         margin-right: auto;
     }
-
+    #explanation{
+        font-size: 13px;
+    }
 }
 
