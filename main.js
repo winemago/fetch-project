@@ -1,6 +1,6 @@
 
 function getBlob(){    //using .then
-    fetch('wave.svg')
+    fetch('images/wave.svg')
     .then(response =>{                                   
         return response.blob();
     }).then(image =>{
@@ -114,7 +114,7 @@ async function getSAT(){
 
     // Making a marker with a custom icon
     const issIcon = L.icon({
-      iconUrl: 'iss.png',
+      iconUrl: 'images/iss.png',
       iconSize: [60, 42],
       iconAnchor: [25, 16]
     });
